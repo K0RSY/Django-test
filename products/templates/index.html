@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Каталог | Товары</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="products">
+        {% for product in products %}
+            <a class="product_card" href="./product/{{ product.content.id }}">
+                <div class="info">
+                    <img src="{{ product.image.file }}" alt="{{ product.image.tooltip }}">
+                    <h2>{{ product.content.name }}</h2>
+                    <h4>{{ product.content.description }}</h4>
+                </div>
+                <div class="price">
+                    <p>{{ product.content.base_price }} ₽</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

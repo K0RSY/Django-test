@@ -1,0 +1,116 @@
+:root {
+    font-family: 'Segoe UI';
+
+    --bg-color: #1c1c1c;
+    --secondary-color: #3e3e3e;
+    --text-color: #dedede;
+
+    --border-radius: 10px;
+    --border-width: 2px;
+
+    --product-width: 275px;
+    --product-height: 550px;
+    --image-height: 200px;
+    --image-size: 350px;
+
+    --gap-small: 10px;
+    --gap-large: 30px;
+}
+
+::selection {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.products .product_card {
+    padding: var(--gap-small);
+    margin: var(--gap-large);
+
+    width: var(--product-width);
+    height: var(--product-height);
+    flex-basis: 200;
+
+    border-radius: var(--border-radius);
+    border: 0 solid var(--secondary-color);
+    border-width: var(--border-width);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    transition: 0.3s;
+}
+
+.products .product_card:hover {
+    background-color: var(--secondary-color);
+}
+
+.products .product_card img {
+    width: var(--product-width);
+    height: var(--product-width);
+    object-fit: cover;
+    
+    border-radius: var(--border-radius);
+}
+
+.product {
+    padding: var(--gap-large);
+}
+
+.product .images {
+    display: flex;
+    flex-direction: row;
+
+    overflow: auto;
+    white-space: nowrap;
+    width: calc(100vw - var(--gap-large) * 2);
+}
+
+.product .images img {
+    width: calc(100vw - (var(--gap-large) + var(--gap-small)) * 2);
+    height: calc(100vw - (var(--gap-large) + var(--gap-small)) * 2);
+    max-width: var(--image-size);
+    max-height: var(--image-size);
+    margin: var(--gap-small);
+
+    object-fit: cover;
+
+    border-radius: var(--border-radius);
+}
+
+.product .parameters {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product .parameters .parameter {
+    margin: var(--gap-small);
+    padding: var(--gap-small);
+
+    width: 240px;
+    height: 75px;
+
+    flex-basis: 200;
+
+    border-radius: var(--border-radius);
+    border: 0 solid var(--secondary-color);
+    border-width: var(--border-width);
+}
